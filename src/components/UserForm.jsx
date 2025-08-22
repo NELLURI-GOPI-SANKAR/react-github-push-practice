@@ -10,7 +10,7 @@ function UserForm() {
 
   // fetch users when component loads
   useEffect(() => {
-    fetch("http://localhost:8081/postdata")
+    fetch("https://react-springboot-backend.onrender.com/postdata")
       .then((res) => res.json())
       .then((data) => setUsers(data))
       .catch((err) => console.error("Error fetching users:", err));
