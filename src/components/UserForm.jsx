@@ -25,7 +25,7 @@ function UserForm() {
     e.preventDefault();
 
     try {
-      const response = await fetch("http://localhost:8081/postdata", {
+      const response = await fetch("https://react-springboot-backend.onrender.com/postdata", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
@@ -36,7 +36,7 @@ function UserForm() {
         setFormData({ name: "", email: "", password: "" }); // reset
 
         // refresh user list after adding new one
-        const updatedUsers = await fetch("http://localhost:8081/postdata").then((res) => res.json());
+        const updatedUsers = await fetch("https://react-springboot-backend.onrender.com/postdata").then((res) => res.json());
         setUsers(updatedUsers);
       } else {
         alert("Something went wrong!");
